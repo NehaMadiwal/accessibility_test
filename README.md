@@ -4,7 +4,8 @@
 
 
 <h2>AccessibilityService Sample app</h2>
-In this app we have configures AccessibilityService to listen to click, text change, window state change, view foused events from **com.example.jetcomposehybridprojec** and **com.example.jetnews**
+
+In this app we have configures AccessibilityService to listen to click, text change, window state change, view foused events from  `com.example.jetcomposehybridproject`  and `com.example.jetnews`
 The test app are available here 
 
 
