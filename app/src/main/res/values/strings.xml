@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AccessibilityTest</string>
+    <string name="accessibility_service_label">Custom Accessibility Service</string>
+    <string name="accessibility_service_description">Custom Accessibility Service</string>
+
+
+    <string name="accessibility_service_btn_text_on">ON</string>
+    <string name="accessibility_service_btn_text_off">OFF</string>
+    <string name="accessibility_service_on">Accessibility Service: ON</string>
+    <string name="accessibility_service_off">Accessibility Service: OFF</string>
+
+
+</resources>
