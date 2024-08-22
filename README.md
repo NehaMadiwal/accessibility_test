@@ -25,13 +25,26 @@ The test app are available here
 
 <h2>Issue faced with Accessibility service</h2>
 
-1. When user turns on AccessibilityService and launches any of the supported apps (JetNews or Compose test app), `AccessibilityEvent.TYPE_VIEW_CLICKED` is not received for Compose views but when XML Button is clicked from Compose test app, it's received by `onAccessibilityEvent()`
+1. When user turns on AccessibilityService and launches any of the supported apps (JetNews or Compose test app), `AccessibilityEvent.TYPE_VIEW_CLICKED` is not received for Compose views but when XML Button is clicked from Compose test app, it's received by `onAccessibilityEvent()`. Following are the logs from logcat for **Test App Launch -> Compose button click -> XML BUTTON click** when AccessibilityService is enabled.
+
+```
+EVENT data: EventData(eventType=WINDOW_STATE_CHANGED, viewId=Unknown, text=Unknown, packageName=com.example.jetcomposehybridproject, className=com.example.jetcomposehybridproject.MainActivity, eventTime=78602542, contentDescription=Unknown)
+EVENT data: EventData(eventType=VIEW_CLICKED, viewId=com.example.jetcomposehybridproject:id/xml_button, text=XML BUTTON, packageName=com.example.jetcomposehybridproject, className=android.widget.Button, eventTime=78606970, contentDescription=Xml Button)
+```
+
 
 <h2>Other Observations</h2> 
 
 1. Adding semantics and `testTagsAsResourceId` along with `testTag` for clickable components didn't resolve the issue.
 2. Adding support for `AccessibilityServiceInfo.FLAG_INCLUDE_NOT_IMPORTANT_VIEWS` didn't resolve the issue.
 3. When AccessibilityService in current project is enabled along with TalkBack service, click events for comopse views are received, though the `event.classname` shows "android.view.View". Refer the logcat when running the app.
+Following are the logs from logcat for **Test App Launch -> Compose button click -> XML BUTTON click** when AccessibilityService is enabled along with TalkBack service.
+
+```
+EVENT data: EventData(eventType=WINDOW_STATE_CHANGED, viewId=Unknown, text=Unknown, packageName=com.example.jetcomposehybridproject, className=com.example.jetcomposehybridproject.MainActivity, eventTime=80315450, contentDescription=Unknown)
+EVENT data: EventData(eventType=VIEW_CLICKED, viewId=btn_compose, text=Unknown, packageName=com.example.jetcomposehybridproject, className=android.view.View, eventTime=80341096, contentDescription=Unknown)
+EVENT data: EventData(eventType=VIEW_CLICKED, viewId=com.example.jetcomposehybridproject:id/xml_button, text=XML BUTTON, packageName=com.example.jetcomposehybridproject, className=android.widget.Button, eventTime=80350724, contentDescription=Xml Button)
+```
 
 
 
