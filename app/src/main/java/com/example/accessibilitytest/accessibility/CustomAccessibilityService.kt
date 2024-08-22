@@ -25,9 +25,8 @@ class CustomAccessibilityService: AccessibilityService() {
             // package names here. Otherwise, when the service is activated, it
             // listens to events from all apps.
             packageNames = arrayOf(
-                "com.nehamadiwal.movieapp",
-                "com.nehamadiwal.jettest",
-                "com.example.jetnews"
+                "com.example.jetnews",
+                "com.example.jetcomposehybridproject"
             )
 
             // Set the type of feedback your service provides.
