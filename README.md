@@ -28,7 +28,7 @@ The test app are available here
 
 <h2>Other Observations</h2> 
 
-1. Adding semantics and testTagsAsResourceId along with testTag for clickable components didn't resolve the issue.
+1. Adding semantics and `testTagsAsResourceId` along with `testTag` for clickable components didn't resolve the issue.
 2. Adding support for `AccessibilityServiceInfo.FLAG_INCLUDE_NOT_IMPORTANT_VIEWS` didn't resolve the issue.
 3. When AccessibilityService in current project is enabled along with TalkBack service, click events for comopse views are received, though the `event.classname` shows "android.view.View". Refer the logcat when running the app.
 
